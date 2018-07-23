@@ -17,4 +17,6 @@ public class Out {
             return new In().inner;
         }
     }
+
+    In in = new In();
 }
