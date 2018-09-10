@@ -18,6 +18,8 @@ public class Client extends Thread {
         this.socket = socket;
         out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
         in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        out.println(name);
+        out.flush();
         new Receive(this).start();
     }
 
@@ -36,8 +38,8 @@ public class Client extends Thread {
     private void sendMessage() {
         while (true) {
             message = input.nextLine();
-//                out.println(name + ":  " + message);
-            out.println(message);
+                out.println(name + ":  " + message);
+//            out.println(message);
                 out.flush();
 
         }
