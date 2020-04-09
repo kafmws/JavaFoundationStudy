@@ -1,4 +1,4 @@
-package chatroom;
+package ChatRoom;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -16,7 +16,7 @@ public class Client {
     public Client() {
 
         try {
-            socket = new Socket("10.80.187.240", port);//
+            socket = new Socket("127.0.0.1", port);
 
             new Cthread().start();
 
@@ -28,7 +28,6 @@ public class Client {
                 System.out.println(msg1);
             }
         } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
